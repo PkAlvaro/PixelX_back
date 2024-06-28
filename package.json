@@ -5,8 +5,8 @@
   "repository": "https://github.com/PkAlvaro/PixelX_back",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "deploy": "node start.js",
     "db:migrate": "sequelize db:migrate",
     "db:seed": "sequelize db:seed:all",
