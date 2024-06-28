@@ -1,13 +1,14 @@
+'use strict';
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('Partidas', 'ready', {
+    await queryInterface.addColumn('ServicioTrenJugadors', 'vendida', {
       type: Sequelize.BOOLEAN,
-      allowNull: true,
       defaultValue: false,
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn('Partidas', 'ready');
-  },
+    await queryInterface.removeColumn('ServicioTrenJugadors', 'vendida');
+  }
 };

@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
   EventoJugador.init({
     id_jugador: DataTypes.INTEGER,
     id_evento: DataTypes.INTEGER,
+    expired: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    }
   }, {
     sequelize,
     modelName: 'EventoJugador',

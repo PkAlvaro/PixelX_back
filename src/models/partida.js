@@ -31,6 +31,24 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       defaultValue: 'None',
     },
+    numTurno: {
+      type: DataTypes.INTEGER,
+    },
+    dadoActual: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1,
+    },
+    dadosInicio: {
+      type: DataTypes.STRING,
+    },
+    turnoActualIndex: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    ready: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   }, {
     sequelize,
     modelName: 'Partida',

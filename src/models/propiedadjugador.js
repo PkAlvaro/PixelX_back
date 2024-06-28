@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     id_jugador: DataTypes.INTEGER,
     id_propiedad: DataTypes.INTEGER,
     num_casas: DataTypes.INTEGER,
+    vendida: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   }, {
     sequelize,
     modelName: 'PropiedadJugador',

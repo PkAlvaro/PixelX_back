@@ -2,8 +2,13 @@
   "name": "back",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/PkAlvaro/PixelX_back",
+  "repository": "https://github.com/IIC2513/PixelX_backend",
   "license": "MIT",
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ]
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
@@ -12,7 +17,8 @@
     "db:seed": "sequelize db:seed:all",
     "db:drop": "sequelize db:drop",
     "db:create": "sequelize db:create",
-    "db:reset": "run-s db:drop db:create"
+    "db:reset": "run-s db:drop db:create",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@koa/cors": "^5.0.0",

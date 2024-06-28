@@ -8,8 +8,12 @@ async function crearPartida(ctx, codigo = 'None', turnos = 20) {
     if (codigo !== 'None') {
       partida.codigo = codigo;
       partida.turnos = turnos;
+      partida.numTurno = turnos;
+
       await partida.save();
     }
+    partida.numTurno = turnos;
+    await partida.save();
     ctx.body = partida;
     ctx.status = 201;
     return partida;
@@ -51,7 +55,7 @@ async function crearLogicadeEntradaPartida(ctx, partida) {
   for (let i = 0; i < participacion.length; i += 1) {
     const jugadorAux = await ctx.orm.Jugador.findByPk(participacion[i].id_jugador);
     if (jugadorAux.id_usuario === ctx.request.body.id_usuario) {
-      ctx.body = 'Ya estas en la partida';
+      ctx.body = { inPartida: true, partidaID: partida.id };
       ctx.status = 400;
       return ctx.body;
     }
@@ -78,7 +82,6 @@ async function crearLogicadeEntradaPartida(ctx, partida) {
   const partidaAuxiliar = partida;
   if (cantJugadores === 3) {
     partidaAuxiliar.estado = 'full';
-    partidaAuxiliar.ready = true;
     await partidaAuxiliar.save();
   }
   return ctx.body;

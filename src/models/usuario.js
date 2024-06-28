@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0,
     },
     rol: DataTypes.STRING,
+    estado: {
+      type: DataTypes.STRING,
+      defaultValue: 'disponible',
+    },
   }, {
     sequelize,
     modelName: 'Usuario',
