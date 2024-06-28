@@ -2,7 +2,7 @@
   "name": "back",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/IIC2513/PixelX_backend",
+  "repository": "https://github.com/PkAlvaro/PixelX_back",
   "license": "MIT",
   "scripts": {
     "start": "node src/app.js",
