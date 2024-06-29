@@ -958,7 +958,7 @@ router.post('evento.aleatorio', '/aleatorio', async (ctx) => {
         try {
             await ctx.orm.EventoJugador.create(
               {
-                idJugador: jugador.id,
+                id_jugador: jugador.id,
                 id_evento: eventoAleatorio.id,
               },
             );
@@ -1106,7 +1106,7 @@ router.post('evento.ircarcel', '/carcel', async (ctx) => {
     const { idJugador } = ctx.request.body;
     const eventoSalir = await ctx.orm.EventoJugador.findOne({
       where: {
-        idJugador,
+        id_jugador: idJugador,
         expired: false,
       },
     });
